@@ -57,16 +57,16 @@ a flexible set of new tools for everyday Python programs.
 这三个方法是协议的所有方法。对象定义了它们中的任意一个，就会被认为是一个描述符。
 用户可在查找属性时重载默认查找行为。
 
-如果对象同时定义了:meth:`__get__`和:meth:`__set__`，称为这个对象为数据描述符（data descriptor）。
-如果只定义了:meth:`__get__`，称为这个对象为非数据描述符（non-data descriptor）。
+如果对象同时定义了 :meth:`__get__` 和 :meth:`__set__` ，称为这个对象为数据描述符（data descriptor）。
+如果只定义了 :meth:`__get__` ，称为这个对象为非数据描述符（non-data descriptor）。
 (非数据描述符通常用于方法，但也可用于其他方面)。
 
 数据描述符与非数据描述符不同在实例（instance）的字典中被采用的优先级不同。如果实例
 字典中有个成员和数据描述符成员同名，数据描述符将优先采用。而如果实例字典中有个成员和
 数据非描述符成员同名，字典成员将优先采用。
 
-如果想定义一个只读的数据描述符，可以在对象中同时定义:meth:`__get__`和:meth:`__set__`， 但:meth:`__set__`
-必须触发:exc:`AttributeError`异常。虽然对象的:meth:`__set__`方法中只触发异常，但足以称它数据描述符。 
+如果想定义一个只读的数据描述符，可以在对象中同时定义 :meth:`__get__` 和 :meth:`__set__` ， 但 :meth:`__set__` 
+必须触发 :exc:`AttributeError` 异常。虽然对象的 :meth:`__set__` 方法中只触发异常，但足以称它数据描述符。 
 
 Invoking Descriptors
 --------------------

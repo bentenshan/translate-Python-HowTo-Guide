@@ -45,7 +45,7 @@ introduced in version 2.2.  Descriptors simplify the underlying C-code and offer
 a flexible set of new tools for everyday Python programs.
 
 
-Descriptor Protocol
+描述符协议
 -------------------
 
 ``descr.__get__(self, obj, type=None) --> value``
@@ -54,26 +54,19 @@ Descriptor Protocol
 
 ``descr.__delete__(self, obj) --> None``
 
-That is all there is to it.  Define any of these methods and an object is
-considered a descriptor and can override default behavior upon being looked up
-as an attribute.
+这三个方法是协议的所有方法。对象定义了它们中的任意一个，就会被认为是一个描述符。
+用户可在查找属性时重载默认查找行为。
 
-If an object defines both :meth:`__get__` and :meth:`__set__`, it is considered
-a data descriptor.  Descriptors that only define :meth:`__get__` are called
-non-data descriptors (they are typically used for methods but other uses are
-possible).
+如果对象同时定义了:meth:`__get__`和:meth:`__set__`，称为这个对象为数据描述符（data descriptor）。
+如果只定义了:meth:`__get__`，称为这个对象为非数据描述符（non-data descriptor）。
+(非数据描述符通常用于方法，但也可用于其他方面)。
 
-Data and non-data descriptors differ in how overrides are calculated with
-respect to entries in an instance's dictionary.  If an instance's dictionary
-has an entry with the same name as a data descriptor, the data descriptor
-takes precedence.  If an instance's dictionary has an entry with the same
-name as a non-data descriptor, the dictionary entry takes precedence.
+数据描述符与非数据描述符不同在实例（instance）的字典中被采用的优先级不同。如果实例
+字典中有个成员和数据描述符成员同名，数据描述符将优先采用。而如果实例字典中有个成员和
+数据非描述符成员同名，字典成员将优先采用。
 
-To make a read-only data descriptor, define both :meth:`__get__` and
-:meth:`__set__` with the :meth:`__set__` raising an :exc:`AttributeError` when
-called.  Defining the :meth:`__set__` method with an exception raising
-placeholder is enough to make it a data descriptor.
-
+如果想定义一个只读的数据描述符，可以在对象中同时定义:meth:`__get__`和:meth:`__set__`， 但:meth:`__set__`
+必须触发:exc:`AttributeError`异常。虽然对象的:meth:`__set__`方法中只触发异常，但足以称它数据描述符。 
 
 Invoking Descriptors
 --------------------

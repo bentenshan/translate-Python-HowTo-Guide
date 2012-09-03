@@ -1,5 +1,5 @@
 ======================
-Descriptor HowTo Guide
+文件描述符HowTo向导
 ======================
 
 :Author: Raymond Hettinger

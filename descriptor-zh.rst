@@ -2,22 +2,20 @@
 文件描述符HowTo向导
 ======================
 
-:Author: Raymond Hettinger
-:Contact: <python at rcn dot com>
+:作者: Raymond Hettinger
+:联系: <python at rcn dot com>
 
 .. Contents::
 
-Abstract
+概述
 --------
 
-Defines descriptors, summarizes the protocol, and shows how descriptors are
-called.  Examines a custom descriptor and several built-in python descriptors
-including functions, properties, static methods, and class methods.  Shows how
-each works by giving a pure Python equivalent and a sample application.
+定义描述符、总结协议和展示描述符调用机制。分析自定义的描述符和几类python内置
+描述符。函数、属性、静态方法和类方法。通过给出等效的python实现和例子程序，展示
+他们的工作机制。
 
-Learning about descriptors not only provides access to a larger toolset, it
-creates a deeper understanding of how Python works and an appreciation for the
-elegance of its design.
+研究描述符不仅能访问更多的工具集，而且有助于进一步理解python工作的机制，和欣赏
+python设计的优雅之处。
 
 
 Definition and Introduction

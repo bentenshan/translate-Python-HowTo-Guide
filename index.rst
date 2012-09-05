@@ -11,13 +11,14 @@ Python Library Reference.
 Currently, the HOWTOs are:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    advocacy.rst
    pyporting.rst
    cporting.rst
    curses.rst
    descriptor.rst
+   descriptor-zh.rst
    doanddont.rst
    functional.rst
    logging.rst

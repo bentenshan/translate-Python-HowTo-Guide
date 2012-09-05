@@ -17,7 +17,6 @@ Currently, the HOWTOs are:
    pyporting.rst
    cporting.rst
    curses.rst
-   descriptor.rst
    descriptor-zh.rst
    doanddont.rst
    functional.rst
